@@ -1,0 +1,42 @@
+<head>
+    <meta charset="UTF-8">
+    <script>
+        function pizza(rozmiar, rodzaj, cena, ciasto, sos){
+            this.rozmiar = rozmiar;
+            this.rodzaj = rodzaj;
+            this.cena = cena;
+            this.ciasto = ciasto;
+            this.sos = sos;
+            var posiekana = false;
+            var zjedzone = 0;
+            function pokroj(posiekana){
+                posiekana=true;
+                return("posiekałeś pizzę");
+            }
+            function zjedz(posiekana, zjedzone){
+                this.posiekana=posiekana;
+                this.zjedzone = zjedzone;
+                if(posiekana){
+                    if(zjedzone<3){
+                        zjedzone++;
+                        return("zjadłeś pizzę");
+                    }
+                    else{return("toć zeziarłeś wszystkie");}
+                }
+                else{return("no i jak zjesz taki niepocięty placek?")}
+            }
+        }
+        kapriczjoza = new pizza('20', 'kapriczjoza', '30', 'grube', 'pomidorowy');
+        pepperoni = new pizza('30', 'pepperoni', '38', 'cienkie', 'pomidorowy');
+        margarita = new pizza('40', 'margarita', '35', 'grube', 'pomidorowy');
+        document.write(kapriczjoza.rozmiar + "cm " + kapriczjoza.rodzaj + " " + kapriczjoza.cena + "zł " + "ciasto:" + kapriczjoza.ciasto + " " + kapriczjoza.sos + "<br/>");
+        document.write(pepperoni.rozmiar + "cm " + pepperoni.rodzaj + " " + pepperoni.cena + "zł " + "ciasto:" + pepperoni.ciasto + " " + pepperoni.sos + "<br/>");
+        document.write(margarita.rozmiar + "cm " + margarita.rodzaj + " " + margarita.cena + "zł " + "ciasto:" + margarita.ciasto + " " + margarita.sos + "<br/>");
+    </script>
+</head>
+<body>
+    <form>
+        <input type="button" onclick="pokroj()" value="pokrój"></br>
+        <input type="button" onclick="zjedz()" value="zjedz"></br>
+    </form>
+</body>
