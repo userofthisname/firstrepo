@@ -1,0 +1,82 @@
+<head>
+    <meta charset="UTF-8">
+    <style>
+        .czek{
+            margin-right: 30px;
+        }
+    </style>
+    <script>
+        
+        function oblicz(dane){
+            var a = document.getElementById("a").value;
+            var b = document.getElementById("b").value;
+            var c=1;
+            var e=1;
+            if(dane.neck[0].checked){
+                c=1.05;
+            }
+            if(dane.neck[1].checked){
+                c=1.10;
+            }
+            if(dane.neck[2].checked){
+                c=1.15;
+            }
+
+            if(dane.pen[0].checked){
+                var x = true;
+            }
+            if(dane.pen[1].checked){
+                var y = true;
+            }
+            if(dane.pen[2].checked){
+                var z = true;
+            }
+            if(x == true && y == true && z == true){
+                e=0.7;
+            }
+            else if(x == true && y == true){
+                e=0.85;
+            }
+            else if(x == true && z == true){
+                e=0.8;
+            }
+            else if(y == true && z == true){
+                e=0.75;
+            }
+            else if(x == true){
+                e=0.95;
+            }
+            else if(y == true){
+                e=0.9;
+            }
+            else if(z == true){
+                e=0.85;
+            }
+            d=((a*c)*e)-(b);
+            njkrth.innerHTML="armor po: " + d.toFixed(2);
+            
+        }
+    </script>  
+</head>
+<body>
+    <form>
+        armor: <input type="number" id="a"><br>
+        dmg: <input type="number" id="b"><br>
+        <br>neck:<br>
+        +5<input type="radio" class="czek" name="neck"><br>
+        
+        +10<input type="radio" class="czek" name="neck"><br>
+        
+        +15<input type="radio" class="czek" name="neck"><br>
+
+        <br>peny<br>
+        5%<input type="checkbox" name="pen" value="0">
+        10%<input type="checkbox" name="pen" value="1">
+        15%<input type="checkbox" name="pen" value="2">
+
+        <input type="button" onclick="oblicz(this.form)" value="licz">
+        
+        
+    </form>
+    <div id="njkrth"> </div>
+</body>

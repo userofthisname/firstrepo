@@ -1,0 +1,45 @@
+<head>
+    <meta charset="UTF-8">
+    <script>
+        var i=0;
+        function kup(cena, towar){
+            if(piniondz.innerHTML-cena>=0){
+            piniondz.innerHTML-=cena;
+            njkrth.innerHTML=" ";
+            eq.innerHTML+="<tr><td onclick='sell(this)'>" + towar + "</td></tr>";
+            }
+        else{njkrth.innerHTML="jesteś zbyt biedny"}
+        
+        }
+        function sell(item){
+            var element = item;
+            item.remove();
+        }
+        
+    </script> 
+</head>
+<body>
+    
+    <h2>GOLD: <div id="piniondz">5000</div></h2>
+
+    <form>
+        <h3>Sklep</h3>
+        <select name="itemshop" id="pracz">
+            <option value="miecz" name="miecz" onclick="kup(4800, 'miecz')">miecz cena: 4800</option>
+            <option value="zbroja" name="zbroja" onclick="kup(15000, 'zbroja')">zbroja płytowa cena: 15000</option>
+            <option value="tarcza" name="tarcza" onclick="kup(400, 'tarcza')">tarcza cena: 400</option>
+            <option value="patyk" name="patyk" onclick="kup(1, 'patyk')">patyk cena: 1</option>
+            <option value="siekiera" name="siekiera" onclick="kup(1000, 'siekiera')">siekiera cena: 1000</option>
+            <option value="wioska" name="wioska" onclick="kup(40000, 'wioska')">wioska cena: 40000</option>
+            <option value="ksiazka" name="ksiazka" onclick="kup(35000, 'książka')">książka cena: 35000</option>
+            <option value="piwo" name="piwo" onclick="kup(1, 'piwo')">piwo cena: 1</option>
+    </select>
+    </form>
+    <div id="njkrth"> </div>
+
+    <table id="eq" style="background-color: coral; border-color: black; border-width: 1px; border-style: solid;">
+        <tr><td></td></tr>
+        
+     </table>
+
+</body>

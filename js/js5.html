@@ -1,0 +1,20 @@
+<head>
+    <meta charset="UTF-8">
+    <script>
+        function oblicz(a, c){
+            var a = parseFloat(X.value);
+            var c = parseFloat(Y.value);
+            var b = Math.sqrt(c*c - a*a);
+            Z.innerHTML = b;
+            var sin= a/c;
+        }
+    </script>  
+</head>
+<body>
+    <form>
+        odległość Artura i Dawida:<input type="number" id="X"><br>
+        droga do Dawida:<input type="number" id="Y"><br>
+        <input type="button" value="oblicz" onclick="oblicz()">
+    </form>
+    <div id="Z"></div>
+</body>

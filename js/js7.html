@@ -1,0 +1,68 @@
+<head>
+    <meta charset="UTF-8">
+    <style>
+        .czek{
+            margin-right: 30px;
+        }
+    </style>
+    <script>
+        
+        function oblicz(dane){
+            var a = document.getElementById("a").value;
+            var b = document.getElementById("b").value;
+            var c=1;
+            if(dane.znizka[0].checked){
+                var x = true;
+            }
+            if(dane.znizka[1].checked){
+                var y = true;
+            }
+            if(dane.znizka[2].checked){
+                var z = true;
+            }
+            if(x == true && y == true && z == true){
+                c=0.65;
+            }
+            else if(x == true && y == true){
+                c=0.85;
+            }
+            else if(x == true && z == true){
+                c=0.75;
+            }
+            else if(y == true && z == true){
+                c=0.7;
+            }
+            else if(x == true){
+                c=0.95;
+            }
+            else if(y == true){
+                c=0.90;
+            }
+            else if(z == true){
+                c=0.80;
+            }
+            
+            d=a*b*c;
+            njkrth.innerHTML=d;
+        }
+    </script>  
+</head>
+<body>
+    <form>
+        cena: <input type="number" id="a"><br>
+        ilość: <input type="number" id="b"><br>
+
+        <input type="radio" class="czek" >
+        
+        <input type="radio" class="czek">
+        
+        <input type="radio" class="czek" ><br>
+
+        5%<input type="checkbox" name="znizka" value="0">
+        10%<input type="checkbox" name="znizka" value="1">
+        20%<input type="checkbox" name="znizka" value="2">
+        <input type="button" onclick="oblicz(this.form)" value="licz">
+        
+    </form>
+    <div id="njkrth"> dfr</div>
+</body>
