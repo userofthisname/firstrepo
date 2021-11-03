@@ -1,0 +1,20 @@
+#title{
+    background-color: green;
+    width: 100%;
+    height: 50px;
+}
+#lewy{
+    background-color: red;
+}
+#prawy{
+    background-color: blue;
+}
+#footer{
+    background-color: #600201;
+    width: 100%;
+}
+.content{
+    float: left;
+    width: 50%;
+    height: 500px;
+}

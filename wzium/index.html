@@ -1,0 +1,67 @@
+<html>
+    <head>
+        <meta charset="UTF-8"/>
+        <link rel="stylesheet" href="style.css">   
+        <script>
+            function wypisz(x, y, z){
+                //pierwsza armia
+                a = parseInt(x);
+                b = parseInt(y);
+                c = parseInt(z);
+                e =(a+b+c)*1.2;
+                d = parseInt(e);
+                type.innerHTML = ("nasza armia liczy " + a + " artylerzystów" + '<br>');
+                type.innerHTML += ("nasza armia liczy " + b + " kawalerzystów" + '<br>');
+                type.innerHTML += ("nasza armia liczy " + c + " muszkieterów" + '<br>');
+                type.innerHTML += ("nasza armia liczy " + d + " ciurów obozowych" + '<br>' + '<br>');
+                //druga armia
+                footer.innerHTML = ("<img src='ryc.gif'>")
+                dz=Math.random(2, 20)*10;
+                f1 = parseInt(a**dz);
+                dz=Math.random(2, 20)*10;
+                f2 = parseInt(b**dz);
+                dz=Math.random(2, 20)*10;
+                f3 = parseInt(c**dz);
+                type.innerHTML += ("nasza armia liczy " + f1 + " artylerzystów" + '<br>');
+                type.innerHTML += ("nasza armia liczy " + f2 + " kawalerzystów" + '<br>');
+                type.innerHTML += ("nasza armia liczy " + f3 + " muszkieterów" + '<br>' + '<br>');
+                type.innerHTML += ("Burgundia przegrała sromotnie" + '<br>');
+                type.innerHTML += ("<img src='pepo.png' style='height: 80px;'>");
+                footer.innerHTML += ("<img src='osiel.gif' style='height: 298px; margin-left: 200px'>");
+                //kolorki
+                kolor1 = Math.random(0, 15)*10;
+                kolor2 = Math.random(0, 15)*10;
+                kolor3 = Math.random(0, 15)*10;
+                //kolorki cz. 2
+                c1 = parseInt(kolor1, 16);
+                c2 = parseInt(kolor2, 16);
+                c3 = parseInt(kolor3, 16);
+                c4 = "#" + c1 + c2 + c3;
+                document.getElementById("title").style.color = c4;
+            }
+            </script>
+
+            <script>
+            function openwindow(){
+                window.open('obraz.html');
+            }
+        </script>
+    </head>
+    <body>
+        <div id="title"><a href="https://pl.wikipedia.org/wiki/Burgundia" target="blank"><img src="herb.png" height="100%"></a><h1 style="text-align: center; margin-top: -42px;"> Bitwy Średniowieczne </h1></div>
+        <div id="lewy" class="content">
+            <p id='type'></p>
+        </div>
+        <div id="prawy" class="content">
+            <form action="" method="POST" onclick="wypisz(this.art.value, this.kaw.value, this.musz.value)">
+                podaj liczbę artylerzystów:<input  name="art"><br>
+                podaj liczbę kawalerzystów:<input  name="kaw"><br>
+                podaj liczbę muszkieterów:<input  name="musz"><br>
+                <button type="button" value="ok">licz</button>
+            </form>
+                <button type="button" onclick="openwindow('')">obraz</button>
+        </div>
+        
+        <div id="footer" style="clear: both;"></div>
+    </body>
+</html>
